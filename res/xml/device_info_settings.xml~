@@ -17,6 +17,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+<<<<<<< HEAD
         <!-- System update settings - launches activity -->
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
@@ -33,10 +34,6 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
-         <PreferenceScreen android:key="vu_logo"
-			android:layout="@layout/logo_row" />
-              </PreferenceScreen>
-
         <!-- CyanogenMod Updates -->
         <PreferenceScreen android:key="cm_updates"
                 android:title="@string/cmupdate_settings_title"
@@ -45,6 +42,11 @@
                     android:targetPackage="com.cyanogenmod.updater"
                     android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
         </PreferenceScreen>
+=======
+
+             <PreferenceScreen android:key="vu_logo"
+			android:layout="@layout/logo_row" />
+>>>>>>> 725327f... Add VU Logo into About Phone Section.
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
