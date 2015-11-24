@@ -45,7 +45,7 @@
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">الاتصال بالحقل القريب</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">إصدار CyanogenMod</string>
+  <string name="mod_version">إصدار VanillaUnicorn</string>
   <string name="mod_version_default">مجهول</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">طراز الجهاز</string>
