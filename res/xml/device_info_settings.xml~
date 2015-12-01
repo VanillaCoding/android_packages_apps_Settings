@@ -17,6 +17,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+ <!-- VU logo -->
+ <PreferenceScreen android:key="vu_logo"
+		   android:layout="@layout/logo_row" />
+         </PreferenceScreen>
+
         <!-- System update settings - launches activity -->
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
@@ -32,10 +37,6 @@
                     android:targetPackage="@string/additional_system_update"
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
-
-         <PreferenceScreen android:key="vu_logo"
-			android:layout="@layout/logo_row" />
-              </PreferenceScreen>
 
         <!-- CyanogenMod Updates -->
         <PreferenceScreen android:key="cm_updates"
