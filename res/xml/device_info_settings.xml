@@ -43,9 +43,9 @@
         </PreferenceScreen>
 
           <!-- VU logo -->
- <PreferenceScreen android:key="vu_logo"
-		   android:layout="@layout/logo_row" />
-         </PreferenceScreen>
+          <Preference android:key="vu_logo"
+                      android:layout="@layout/logo_row" />
+         
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
