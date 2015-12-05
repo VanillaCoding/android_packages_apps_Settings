@@ -26,6 +26,13 @@
         <attr name="aspectRatio" format="float" />
     </declare-styleable>
 
+    <declare-styleable name="SeekBarPreference">
+        <attr name="minChOS" format="integer" />
+        <attr name="interval" format="integer" />
+        <attr name="unitsLeft" format="string|reference" />
+        <attr name="unitsRight" format="string|reference" />
+    </declare-styleable>
+
     <declare-styleable name="BatteryHistoryChart">
         <!-- Base text color, typeface, size, and style. -->
         <attr name="android:textAppearance" />
