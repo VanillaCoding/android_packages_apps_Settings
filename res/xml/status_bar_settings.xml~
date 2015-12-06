@@ -64,6 +64,22 @@
         android:title="@string/status_bar_notif_count_title"
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
+<<<<<<< HEAD
+=======
+
+     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="status_bar_crdroid_logo"
+        android:title="@string/status_bar_crdroid_logo_title"
+        android:summaryOn="@string/status_bar_crdroid_logo_summary_on"
+        android:summaryOff="@string/status_bar_crdroid_logo_summary_off"
+        android:defaultValue="false" />
+
+     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="show_su_indicator"
+        android:title="@string/su_indicator"
+        android:summaryOn="@string/su_indicator_summary_on"
+        android:summaryOff="@string/su_indicator_summary_off"
+        android:defaultValue="true" />
 
      <!-- Network traffic meter -->
      <PreferenceCategory
@@ -97,7 +113,7 @@
              android:summary="@string/network_traffic_autohide_summary"
              android:defaultValue="false"/>
 
-         <com.android.settings.vu.SeekBarPreference
+         <com.android.settings.crdroid.SeekBarPreference
              android:key="network_traffic_autohide_threshold"
              android:title="@string/network_traffic_autohide_threshold"
              android:max="100"
@@ -109,4 +125,5 @@
 
      </PreferenceCategory>
 
+>>>>>>> 243f3df... [2/2] Network Traffic
 </PreferenceScreen>
