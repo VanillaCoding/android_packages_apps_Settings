@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
 import com.android.settings.profiles.actions.item.Item;
 
 import java.util.List;
@@ -39,7 +40,8 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
         TRIGGER_ITEM,
         APP_GROUP_ITEM,
         BRIGHTNESS_ITEM,
-        DOZEMODE_ITEM
+        DOZEMODE_ITEM,
+        NOTIFICATIONLIGHTMODE_ITEM
     }
 
     public ItemListAdapter(Context context, List<Item> items) {

@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +26,7 @@ import android.util.SparseArray;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.search.SearchIndexableRaw;
@@ -35,8 +37,10 @@ import java.util.List;
 public class ZenModeSettings extends ZenModeSettingsBase implements Indexable {
     private static final String KEY_PRIORITY_SETTINGS = "priority_settings";
     private static final String KEY_AUTOMATION_SETTINGS = "automation_settings";
+    private static final String KEY_ZEN_ACCESS = "manage_zen_access";
 
     private Preference mPrioritySettings;
+    private Preference mZenAccess;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,12 +53,16 @@ public class ZenModeSettings extends ZenModeSettingsBase implements Indexable {
         if (!isScheduleSupported(mContext)) {
             removePreference(KEY_AUTOMATION_SETTINGS);
         }
+
+        mZenAccess = findPreference(KEY_ZEN_ACCESS);
+        refreshZenAccess();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         updateControls();
+        refreshZenAccess();
     }
 
     @Override
@@ -77,21 +85,21 @@ public class ZenModeSettings extends ZenModeSettingsBase implements Indexable {
     }
 
     private void updatePrioritySettingsSummary() {
-        final boolean callers = mConfig.allowCalls || mConfig.allowRepeatCallers;
-        String s = getResources().getString(R.string.zen_mode_alarms);
-        s = appendLowercase(s, mConfig.allowReminders, R.string.zen_mode_reminders);
-        s = appendLowercase(s, mConfig.allowEvents, R.string.zen_mode_events);
-        s = appendLowercase(s, callers, R.string.zen_mode_selected_callers);
-        s = appendLowercase(s, mConfig.allowMessages, R.string.zen_mode_selected_messages);
-        mPrioritySettings.setSummary(s);
-    }
-
-    private String appendLowercase(String s, boolean condition, int resId) {
-        if (condition) {
-            return getResources().getString(R.string.join_many_items_middle, s,
-                    getResources().getString(resId).toLowerCase());
+        final ArrayList<String> items = new ArrayList<>();
+        items.add(getString(R.string.zen_mode_alarms));
+        if (mConfig.allowReminders) {
+            items.add(getString(R.string.zen_mode_summary_reminders));
         }
-        return s;
+        if (mConfig.allowEvents) {
+            items.add(getString(R.string.zen_mode_summary_events));
+        }
+        if (mConfig.allowCalls || mConfig.allowRepeatCallers) {
+            items.add(getString(R.string.zen_mode_summary_selected_callers));
+        }
+        if (mConfig.allowMessages) {
+            items.add(getString(R.string.zen_mode_summary_selected_messages));
+        }
+        mPrioritySettings.setSummary(Utils.join(getResources(), items));
     }
 
     private static SparseArray<String> allKeyTitles(Context context) {
@@ -135,4 +143,10 @@ public class ZenModeSettings extends ZenModeSettingsBase implements Indexable {
                 return rt;
             }
         };
+
+    // === Zen access ===
+
+    private void refreshZenAccess() {
+        // noop for now
+    }
 }
