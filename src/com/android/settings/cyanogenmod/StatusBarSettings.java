@@ -129,6 +129,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+        
+        int quickPulldown = CMSettings.System.getInt(resolver,
+                CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
+        mQuickPulldown.setValue(String.valueOf(quickPulldown));
+        updatePulldownSummary(quickPulldown);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mNetTrafficState = (ListPreference) prefScreen.findPreference(NETWORK_TRAFFIC_STATE);
         mNetTrafficUnit = (ListPreference) prefScreen.findPreference(NETWORK_TRAFFIC_UNIT);
@@ -174,11 +180,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD));
         }
 
-        int quickPulldown = CMSettings.System.getInt(resolver,
-                CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
-        mQuickPulldown.setValue(String.valueOf(quickPulldown));
-        updatePulldownSummary(quickPulldown);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -281,6 +282,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarBatteryShowPercent.setEnabled(true);
         }
     }
+    
+   private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.status_bar_quick_qs_pulldown_summary_left
+                    : R.string.status_bar_quick_qs_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
+        }
+    }
 
     private void loadResources() {
         Resources resources = getActivity().getResources();
@@ -300,19 +315,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private boolean getBit(int intNumber, int intMask) {
         return (intNumber & intMask) == intMask;
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.status_bar_quick_qs_pulldown_summary_left
-                    : R.string.status_bar_quick_qs_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
-        }
+        
     }
+
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
