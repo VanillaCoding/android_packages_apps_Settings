@@ -263,7 +263,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         } else if (preference == mNetTrafficAutohideThreshold) {
             int threshold = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, threshold * 1);
+            Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, threshold * 1);
+            return true;
         } else if (preference == mQuickPulldown) {
             int quickPulldown = Integer.valueOf((String) newValue);
             CMSettings.System.putInt(
@@ -280,20 +281,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarBatteryShowPercent.setEnabled(false);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
-        }
-    }
-    
-   private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.status_bar_quick_qs_pulldown_summary_left
-                    : R.string.status_bar_quick_qs_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
         }
     }
 
@@ -316,8 +303,22 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private boolean getBit(int intNumber, int intMask) {
         return (intNumber & intMask) == intMask;
         
-    }
+       }
+}
+       
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
 
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.status_bar_quick_qs_pulldown_summary_left
+                    : R.string.status_bar_quick_qs_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
+        }
+    }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
