@@ -304,7 +304,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         return (intNumber & intMask) == intMask;
         
        }
-}
        
     private void updatePulldownSummary(int value) {
         Resources res = getResources();
