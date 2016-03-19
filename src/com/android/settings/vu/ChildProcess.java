@@ -1,4 +1,4 @@
-package com.android.settings.crdroid.util;
+package com.android.settings.vu.util;
 
 import android.os.Environment;
 import android.util.Log;
