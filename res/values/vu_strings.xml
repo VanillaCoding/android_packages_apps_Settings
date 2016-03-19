@@ -37,4 +37,9 @@
     <string name="recents_show_membar_summary_on">Available RAM memory bar will be displayed on recents view</string>
     <string name="recents_show_membar_summary_off">Toggle to display available RAM memory bar on recents view</string>
 
+<!-- Selinux switch -->
+    <string name="selinux_title">SELinux Mode</string>
+    <string name="selinux_permissive_title">Permissive</string>
+    <string name="selinux_enforcing_title">Enforcing</string>
+
 </resources>
