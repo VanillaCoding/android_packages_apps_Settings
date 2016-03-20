@@ -63,14 +63,14 @@ import com.android.settings.search.Index;
 import com.android.settings.search.Indexable;
 import com.android.settings.search.SearchIndexableRaw;
 
+import org.cyanogenmod.internal.util.CmLockPatternUtils;
+
+import cyanogenmod.providers.CMSettings;
+
 import java.io.InputStreamReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.BufferedReader;
-
-import org.cyanogenmod.internal.util.CmLockPatternUtils;
-
-import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,7 +128,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
     private static final String KEY_TRUST_AGENT = "trust_agent";
     private static final String KEY_SCREEN_PINNING = "screen_pinning_settings";
+    
     private static final String SELINUX = "selinux";
+    
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_GENERAL_CATEGORY = "general_category";
     private static final String KEY_LIVE_LOCK_SCREEN = "live_lock_screen";
