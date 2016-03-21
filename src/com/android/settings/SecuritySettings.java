@@ -882,10 +882,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
         } else if (preference == mSelinux) {
             if (value.toString().equals("true")) {
-                CMDProcessor.runSuCommand("setenforce 1");
+                CMDProcessor.runShellCommand("setenforce 1");
                 mSelinux.setSummary(R.string.selinux_enforcing_title);
             } else if (value.toString().equals("false")) {
-                CMDProcessor.runSuCommand("setenforce 0");
+                CMDProcessor.runShellCommand("setenforce 0");
                 mSelinux.setSummary(R.string.selinux_permissive_title);
             }
         }
