@@ -70,6 +70,13 @@
         android:summaryOff="@string/status_bar_vu_logo_summary_off"
         android:defaultValue="false" />
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="show_su_indicator"
+        android:title="@string/su_indicator"
+        android:summaryOn="@string/su_indicator_summary_on"
+        android:summaryOff="@string/su_indicator_summary_off"
+        android:defaultValue="true" />
+
     <com.android.settings.cyanogenmod.CMSystemSettingSwitchPreference
         android:key="status_bar_notif_count"
         android:title="@string/status_bar_notif_count_title"
@@ -125,7 +132,5 @@
              android:persistent="false" />
 
      </PreferenceCategory>
-
- 
 
 </PreferenceScreen>
