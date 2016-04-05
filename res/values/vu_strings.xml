@@ -38,12 +38,12 @@
     <string name="recents_show_membar_summary_off">Toggle to display available RAM memory bar on recents view</string>
 
 <!-- Selinux switch -->
-    <string name="selinux_title">SELinux Mode</string>
+    <string name="selinux_title">SELinux Changer</string>
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
 
 <!-- Statusbar vu logo -->
-    <string name="status_bar_vu_logo_title">VanillaUnicorn logo</string>
+    <string name="status_bar_vu_logo_title">VanillaUnicorn Shield</string>
     <string name="status_bar_vu_logo_summary_on">VanillaUnicorn logo is active</string>
     <string name="status_bar_vu_logo_summary_off">Toggle to show VanillaUnicorn logo on statusbar</string>
 
@@ -54,7 +54,7 @@
 
 <!-- Change Log -->
     <string name="changelog_title">Changelog</string>
-    <string name="changelog_title_summary">View recent changes in ROM</string>
-    <string name="changelog_error">Unable to load changelog</string>
+    <string name="changelog_title_summary">View recent VanillaUnicorn changes</string>
+    <string name="changelog_error">Houston, we have a problem</string>
 
 </resources>
