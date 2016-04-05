@@ -52,4 +52,9 @@
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
     <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
 
+<!-- Change Log -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_error">Unable to load changelog</string>
+
 </resources>

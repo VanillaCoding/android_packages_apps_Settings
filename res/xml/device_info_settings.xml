@@ -47,6 +47,11 @@
           <Preference android:key="vu_logo"
                       android:layout="@layout/logo_row" />
          
+        <!-- Change Log -->
+        <PreferenceScreen android:key="changelog"
+                android:title="@string/changelog_title"
+                android:summary="@string/changelog_title_summary"
+                android:fragment="com.android.settings.vu.ChangeLog" />
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
