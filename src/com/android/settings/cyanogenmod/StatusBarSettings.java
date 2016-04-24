@@ -298,20 +298,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         }
     }
 
-private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.status_bar_quick_qs_pulldown_summary_left
-                    : R.string.status_bar_quick_qs_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));      
-        }
-    }
-
     
     private void parseClockDateFormats() {
         // Parse and repopulate mClockDateFormats's entries based on current date.
