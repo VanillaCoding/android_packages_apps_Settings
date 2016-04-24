@@ -31,7 +31,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.crdroid.SeekBarPreference;
+import com.android.settings.vu.SeekBarPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
