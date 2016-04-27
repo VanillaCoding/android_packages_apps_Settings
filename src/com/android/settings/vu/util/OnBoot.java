@@ -1,4 +1,4 @@
-package com.android.settings.du;
+package com.android.settings.vu.util;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
-import com.android.internal.util.du.CMDProcessor;
+import com.android.internal.vu.util.CMDProcessor;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,8 +20,6 @@ public class OnBoot extends BroadcastReceiver {
     private static final String TAG = "SettingsOnBoot";
     Boolean mSetupRunning = false;
 
-    protected int getMetricsCategory() {
-        return MetricsLogger.DIRTYTWEAKS;
     }
 
     @Override
