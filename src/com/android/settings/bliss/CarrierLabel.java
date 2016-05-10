@@ -103,16 +103,7 @@ public class CarrierLabel  extends SettingsPreferenceFragment
         mCarrierColorPicker.setSummary(hexColor);
         mCarrierColorPicker.setNewPreviewColor(intColor);
 
-
-
- 	if (TelephonyManager.getDefault().isMultiSimEnabled()) {
-            prefSet.removePreference(mShowCarrierLabel);
-            prefSet.removePreference(mCustomCarrierLabel);
-        } else {
-            updateCustomLabelTextSummary();
-        }
-
-}
+    }
 
     private void updateCustomLabelTextSummary() {
         mCustomCarrierLabelText = Settings.System.getString(
