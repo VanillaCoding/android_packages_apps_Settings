@@ -48,7 +48,7 @@
   <!-- About phone screen, Device name -->
   <string name="device_name">डिव्हाइस नाव</string>
   <!-- About phone screen, CyanogenMod Api Level -->
-  <string name="mod_api_level">CyanogenMod API लेव्हल</string>
+  <string name="mod_api_level">VanillaUnicorn API लेव्हल</string>
   <string name="mod_api_level_default">अज्ञात</string>
   <!-- About phone screen, build date -->
   <string name="build_date">बांधणी तारीख</string>

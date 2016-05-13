@@ -41,7 +41,7 @@
   <!-- About phone screen, build date -->
   <string name="build_date">නිමැවූ දිනය</string>
   <!-- CM Updater -->
-  <string name="cmupdate_settings_title">CyanogenMod යාවත්කාලීනයන්</string>
+  <string name="cmupdate_settings_title">VanillaUnicorn යාවත්කාලීනයන්</string>
   <!-- Settings switch for updating Cyanogen recovery -->
   <!-- Themes Settings -->
   <!-- Settings main menu entry -->
