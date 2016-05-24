@@ -617,13 +617,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 CMSettings.Global.DEV_FORCE_SHOW_NAVBAR, enabled ? 1 : 0);
     }
 
-    private void updateDisableNavkeysOption() {
-        boolean enabled = CMSettings.Global.getInt(getActivity().getContentResolver(),
-                CMSettings.Global.DEV_FORCE_SHOW_NAVBAR, 0) != 0;
-
-        mDisableNavigationKeys.setChecked(enabled);
-    }
-
     private void updateDisableNavkeysCategories(boolean navbarEnabled) {
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
