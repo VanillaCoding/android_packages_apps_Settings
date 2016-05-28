@@ -52,6 +52,19 @@
   <!-- Wi-Fi region code -->
   <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
   <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
+  <string name="wifi_setting_countrycode_error">Ada masalah saat mengatur kode wilayah.</string>
+  <string name="wifi_countrycode_us">Amerika</string>
+  <string name="wifi_countrycode_ca">Kanada, Taiwan</string>
+  <string name="wifi_countrycode_de">Jerman</string>
+  <string name="wifi_countrycode_gb">Eropa</string>
+  <string name="wifi_countrycode_jp">Jepang, Rusia</string>
+  <string name="wifi_countrycode_au">Australia</string>
+  <string name="wifi_countrycode_cn">Tiongkok</string>
+  <string name="wifi_countrycode_kr">Korea</string>
+  <string name="wifi_countrycode_tr">Afrika Selatan, Turki</string>
+  <string name="wifi_countrycode_sg">Israel, Singapura</string>
+  <string name="wifi_countrycode_br">Brasil</string>
+  <string name="wifi_countrycode_in">India</string>
   <!-- Profiles -->
   <!-- Title for application group setting screen -->
   <!-- Navigation Bar -->
@@ -94,6 +107,22 @@
   <!-- WiFi auto-configure priorities -->
   <!-- Display : Rotation  -->
   <!-- Display settings.  Screen color. -->
+  <string name="screencolor">Warna layar</string>
+  <string name="screencolor_summary">Menyetel warna layar, saturasi, kontras atau intensitas</string>
+  <string name="custom_screencolor">Warna layar khusus</string>
+  <string name="screencolor_save">Simpan</string>
+  <string name="screencolor_cancel">Batalkan</string>
+  <string name="restore_preview">Lihat gambar semula</string>
+  <string name="selectnewfile_menu">Lihat gambar baru dari Galeri</string>
+  <string name="selectfile_menu">Lihat gambar dari Galeri</string>
+  <string name="restore_default_str">Atur kembali</string>
+  <string name="hue_str">Rona: <xliff:g id="hue_value">%1$s</xliff:g></string>
+  <string name="saturation_str">Saturasi: <xliff:g id="saturation_value">%1$s</xliff:g></string>
+  <string name="contrast_str">Kontras: <xliff:g id="contrast_value">%1$s</xliff:g></string>
+  <string name="intensity_str">Intensitas: <xliff:g id="intensity_str_value">%1$s</xliff:g></string>
+  <string name="screen_color_standard">Standar</string>
+  <string name="screen_color_vivid">Jelas</string>
+  <string name="screen_color_custom">Khusus</string>
   <!-- LiveDisplay -->
   <!-- Whether to display IME switcher notifcation -->
   <!-- Heads up -->
